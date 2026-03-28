@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PharmaCompas Pro — Pharmacology Reference Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
+    integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3oD+sCoJrzXJ+yKen8279K/TisFkemHuBLvSYAcb5K4mOI+eqNIGsA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       EDUCATIONAL DISCLAIMER
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="disclaimer-bar">
+    <span class="disc-icon">⚕️</span>
+    <p>
+      <strong>Educational Use Only.</strong>
+      This tool is for educational and research purposes only. It does not provide medical advice or guidance on the use of any substances.
+      Always consult a qualified healthcare professional. Not intended for clinical decision-making.
+    </p>
+    <button id="dismiss-disclaimer">Dismiss</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       APP SHELL
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="app-wrapper">
+
+    <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+    <aside id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-name">⚗ PharmaCompas</div>
+        <div class="brand-sub">Pro · Pharmacology Platform</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Overview</div>
+
+        <div class="nav-item active" data-section="dashboard" onclick="navigate('dashboard')">
+          <span class="nav-icon">🏠</span> Dashboard
+        </div>
+
+        <div class="nav-section-label">Reference</div>
+
+        <div class="nav-item" data-section="library" onclick="navigate('library')">
+          <span class="nav-icon">📚</span> Substance Library
+        </div>
+
+        <div class="nav-section-label">Calculators</div>
+
+        <div class="nav-item" data-section="pk" onclick="navigate('pk')">
+          <span class="nav-icon">📈</span> Pharmacokinetics
+        </div>
+
+        <div class="nav-item" data-section="dose" onclick="navigate('dose')">
+          <span class="nav-icon">💊</span> Dose Calculators
+        </div>
+
+        <div class="nav-item" data-section="clinical" onclick="navigate('clinical')">
+          <span class="nav-icon">🏥</span> Clinical Tools
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <strong>PharmaCompas Pro</strong><br>
+        Educational reference platform<br>
+        for pharmacology learners.<br><br>
+        © 2025 · For educational use only
+      </div>
+    </aside>
+
+    <!-- ─── MAIN AREA ────────────────────────────────────────── -->
+    <main id="app-main">
+      <div id="app-topbar">
+        <button id="hamburger" onclick="toggleSidebar()">☰</button>
+        <span class="topbar-title">Pharmacology Reference Platform</span>
+        <span class="topbar-badge">⚕ Educational Only</span>
+      </div>
+
+      <div id="main-content">
+        <!-- Dynamically rendered by main.js -->
+      </div>
+    </main>
+
+  </div><!-- /#app-wrapper -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — load in dependency order
+  ══════════════════════════════════════════════════════════════ -->
+  <script src="data/substances.js"></script>
+  <script src="js/pk_calculators.js"></script>
+  <script src="js/dose_calculators.js"></script>
+  <script src="js/clinical_tools.js"></script>
+  <script src="js/substance_library.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
